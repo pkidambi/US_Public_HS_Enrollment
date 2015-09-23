@@ -1,29 +1,12 @@
 ---
-title       : US Public High School Enrollment
+title       : US Public High School Enrollment 
 author      : pkidambi  
-job         : 
-framework   : html5slides      
-highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      # 
-widgets     : []            # {mathjax, quiz, bootstrap}
-mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
-## United States Public High School Enrollment
-
-1. The product showcases the United States Public High School Enrollment trends over a timeline by US State, type of student and grade
-
-2. The product can be accessed at (https://pkidambi.shinyapps.io/US_Public_HS_Enrollment) and the source code can be accessed at (https://github.com/pkidambi/US_Public_HS_Enrollment)
-
-3. The data used for this product was downloaded from [Western Interstate Commission for Higher Education (WICHE)](http://knocking.wiche.edu/download) portal
-
-Author: PKidambi
-
---- .class #id 
 
 ## Input Data File
-Summary of the input data is showcased using the **summary** command in R
+The [product hosted on shinyapps](https://pkidambi.shinyapps.io/US_Public_HS_Enrollment) showcases the United States Public High School Enrollment trends over a timeline by US State, type of student and grade as downloaded from [WICHE](http://knocking.wiche.edu/download). Summary of the input data is showcased using the **summary** command in R
 
 
 ```r
@@ -79,4 +62,3 @@ The output is a US map with the selected US state highlighted and labeled, and b
 3. Update the product with primary school and middle school data
 
 4. Create a prediction algorithm to predict the enrollment trends after 2027
---- 

@@ -29,19 +29,30 @@ shinyServer(function(input, output) {
  
 # plot enrollment of 9th, 10th, 11th and 12th grades based on state and type of student  
 output$enrollment_9 <- renderPlot(
-qplot(x=sel_mydata()$Year, y=sel_mydata()$Grade.9, fill = sel_mydata()$Type, geom="bar", stat="identity", data=sel_mydata(), position="dodge", xlab = "YEAR", main = "Grade 9 enrollment",  ylab = "# of students") + geom_text(aes(label=sel_mydata()$Grade.9), vjust=0) + theme(legend.title=element_blank())
- ) 
+qplot(x=sel_mydata()$Year, y=sel_mydata()$Grade.9, fill = sel_mydata()$Type, geom="bar", stat="identity", data=sel_mydata(), position="dodge", xlab = "YEAR", main = "Grade 9 enrollment",  ylab = "# of students") + geom_text(aes(label=sel_mydata()$Grade.9), vjust=0) + theme(legend.title=element_blank())) 
 output$enrollment_10 <- renderPlot(
-  qplot(x=sel_mydata()$Year, y=sel_mydata()$Grade.10, fill = sel_mydata()$Type, geom="bar", stat="identity", data=sel_mydata(), position="dodge", xlab = "YEAR", main = "Grade 10 enrollment",  ylab = "# of students")+ geom_text(aes(label=sel_mydata()$Grade.9), vjust=0) + theme(legend.title=element_blank())
+  qplot(x=sel_mydata()$Year, y=sel_mydata()$Grade.10, fill = sel_mydata()$Type, geom="bar", stat="identity", data=sel_mydata(), position="dodge", xlab = "YEAR", main = "Grade 10 enrollment",  ylab = "# of students")+ geom_text(aes(label=sel_mydata()$Grade.10), vjust=0) + theme(legend.title=element_blank())
 ) 
 output$enrollment_11 <- renderPlot(
-  qplot(x=sel_mydata()$Year, y=sel_mydata()$Grade.11, fill = sel_mydata()$Type, geom="bar", stat="identity", data=sel_mydata(), position="dodge", xlab = "YEAR", main="Grade 11 Enrollment",  ylab = "# of students") +geom_text(aes(label=sel_mydata()$Grade.9), vjust=0) + theme(legend.title=element_blank())
+  qplot(x=sel_mydata()$Year, y=sel_mydata()$Grade.11, fill = sel_mydata()$Type, geom="bar", stat="identity", data=sel_mydata(), position="dodge", xlab = "YEAR", main="Grade 11 Enrollment",  ylab = "# of students") +geom_text(aes(label=sel_mydata()$Grade.11), vjust=0) + theme(legend.title=element_blank())
 ) 
-output$enrollment_12 <- renderPlot(
-  qplot(x=sel_mydata()$Year, y=sel_mydata()$Grade.12, fill = sel_mydata()$Type, geom="bar", stat="identity", data=sel_mydata(), position="dodge", xlab = "YEAR", main = "Grade 12 enrollment",  ylab = "# of students") +geom_text(aes(label=sel_mydata()$Grade.9), vjust=0) + theme(legend.title=element_blank())
-) 
- 
-output$st <- renderPlot({
+
+
+output$enrollment_12 <- renderPlot({
+  yset <- as.numeric(as.character(sel_mydata()$Grade.12))
+  
+  qplot(x=sel_mydata()$Year, y=sel_mydata()$Grade.12,  fill = sel_mydata()$Type, geom="bar", stat="identity", data=sel_mydata(), position="dodge", xlab = "YEAR", main = "Grade 12 enrollment",  ylab = "# of students") +geom_text(aes(label=sel_mydata()$Grade.12), vjust=0) + theme(legend.title=element_blank()) 
+  })
+
+
+
+
+
+
+
+output$xyz <- renderPrint(range(as.numeric(as.character(sel_mydata()$Grade.12))))
+                                  
+  output$st <- renderPlot({
 # highlight the state of interest and label it 
   map("state")
   map("state",region = as.character(input$cb1), add=TRUE, fill = TRUE, col = "darkslategray1")

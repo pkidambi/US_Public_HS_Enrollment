@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>US Public High School Enrollment</title>
+	<meta name="description" content="US Public High School Enrollment">
+	<meta name="author" content="pkidambi">
+	<meta name="generator" content="slidify" />
+	
+	<!-- LOAD STYLE SHEETS -->
+	<link rel="stylesheet" href="libraries/frameworks/html5slides/default/styles.css">
+	<link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />  <link rel="stylesheet" href = "assets/css/ribbons.css">
+  
+</head>
+<body style='display: none'>
+	<section class='slides layout-regular template-regular'>
+     <article class="" id="slide-1" style="background:;">
+  <h3>United States Public High School Enrollment</h3>
+  <ol>
+<li><p>The product showcases the United States Public High School Enrollment trends over a timeline by US State, type of student and grade</p></li>
+<li><p>The product can be accessed at (<a href="https://pkidambi.shinyapps.io/US_Public_HS_Enrollment">https://pkidambi.shinyapps.io/US_Public_HS_Enrollment</a>) and the source code can be accessed at (<a href="https://github.com/pkidambi/US_Public_HS_Enrollment">https://github.com/pkidambi/US_Public_HS_Enrollment</a>)</p></li>
+<li><p>The data used for this product was downloaded from <a href="http://knocking.wiche.edu/download">Western Interstate Commission for Higher Education (WICHE)</a> portal</p></li>
+</ol>
+
+<p>Author: PKidambi</p>
+
+</article>
+
+<article class="class" id="id" style="background:;">
+  <h3>Input Data File</h3>
+  <p>Summary of the input data is showcased using the <strong>summary</strong> command in R</p>
+
+<pre><code class="r"># read the data
+summary(mydata,4)
+</code></pre>
+
+<pre><code>##      State                                    Type           Year     
+##  AK     : 192   American Indian/AlAsianka Native:1632   1996   : 306  
+##  AL     : 192   Asian                           :1632   1997   : 306  
+##  AR     : 192   Black non-Hispanicspanic        :1632   1998   : 306  
+##  (Other):9216   (Other)                         :4896   (Other):8874  
+##     Grade.9        Grade.10       Grade.11       Grade.12   
+##  0      : 982   0      : 679   0      : 375   0      :  71  
+##  114    :  15   210    :  13   66     :  15   135    :  15  
+##  79     :  11   74     :  13   135    :  13   57     :  14  
+##  (Other):8784   (Other):9087   (Other):9389   (Other):9692  
+##     Diploma     Region  
+##  0      :  22   M:1920  
+##  63     :  16   N:1728  
+##  49     :  14   S:3264  
+##  (Other):9740   W:2880
+</code></pre>
+
+</article>
+
+<article class="class" id="id" style="background:;">
+  <h3>Product Inputs</h3>
+  <p>The end user can select the <em>United States State</em>, <em>Student Type</em> and <em>Timeframe for analysis</em> as showcased in the figure below </p>
+
+<p><img src="input.JPG" alt="Input"></p>
+
+</article>
+
+<article class="class" id="id" style="background:;">
+  <h3>Product Outputs</h3>
+  <p>The output is a US map with the selected US state highlighted and labeled, and bar plots of the high school enrollments in the selected time frame as showcased in the figure below. </p>
+
+<p><img src="output.JPG" alt="Output"></p>
+
+</article>
+
+<article class="class" id="id" style="background:;">
+  <h3>Download &amp; Future Updates</h3>
+  <ol>
+<li><p>The data based on the end user inputs can be downloaded by clicking the download button on the <strong>Data</strong> tab. More information about the product can be found by clicking on <strong>About</strong> tab. </p></li>
+<li><p>Obtain US private school enrollment data and add it to our database</p></li>
+<li><p>Update the product with primary school and middle school data</p></li>
+</ol>
+
+<h2>4. Create a prediction algorithm to predict the enrollment trends after 2027</h2>
+
+</article>
+
+  </section>
+</body>
+  <!-- LOAD JAVASCRIPTS  -->
+	<script src='libraries/frameworks/html5slides/default/slides.js'></script>
+	<!-- LOAD HIGHLIGHTER JS FILES -->
+	<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+	 
+	</html>
